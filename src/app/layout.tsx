@@ -1,53 +1,62 @@
 import "@/styles/globals.css";
 import React from "react";
 import { type Metadata } from "next";
-
 export const viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  maximumScale: 1
 };
-
 export const metadata: Metadata = {
   title: {
     default: "PestisidaApp - Sistem Pencatatan Penjualan Pestisida",
-    template: "%s | PestisidaApp",
+    template: "%s | PestisidaApp"
   },
   description: "Sistem pencatatan penjualan pestisida yang mudah dan efisien untuk kios Anda",
   applicationName: "PestisidaApp",
   keywords: ["pestisida", "penjualan", "kios", "pertanian", "pencatatan", "stok"],
-  authors: [{ name: "PestisidaApp Team" }],
+  authors: [{
+    name: "PestisidaApp Team"
+  }],
   creator: "PestisidaApp Team",
   publisher: "PestisidaApp Team",
   icons: {
-    icon: [
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
-    ],
-    apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
+    icon: [{
+      url: "/favicon-16x16.png",
+      sizes: "16x16",
+      type: "image/png"
+    }, {
+      url: "/favicon-32x32.png",
+      sizes: "32x32",
+      type: "image/png"
+    }, {
+      url: "/favicon.ico",
+      sizes: "48x48",
+      type: "image/x-icon"
+    }],
+    apple: [{
+      url: "/apple-touch-icon.png",
+      sizes: "180x180",
+      type: "image/png"
+    }]
   },
   manifest: "/site.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "PestisidaApp",
+    title: "PestisidaApp"
   },
   formatDetection: {
-    telephone: false,
-  },
+    telephone: false
+  }
 };
-
 export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html suppressHydrationWarning lang="id">
-      <body className="min-h-screen antialiased">
+  children
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return <html suppressHydrationWarning lang="id" data-unique-id="1c327c14-1bdf-4fe5-b2c4-d25862b81469" data-file-name="app/layout.tsx">
+      <body className="min-h-screen antialiased" data-unique-id="294235f0-bfb9-476b-b8b9-6d0613d74a3a" data-file-name="app/layout.tsx" data-dynamic-text="true">
         {children}
       </body>
-    </html>
-  );
+    </html>;
 }
