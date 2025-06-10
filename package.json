@@ -45,6 +45,8 @@
         "radix-ui": "^1.4.2",
         "react": "^18.3.1",
         "react-day-picker": "^9.7.0",
+        "react-dnd": "^16.0.1",
+        "react-dnd-html5-backend": "^16.0.1",
         "react-dom": "^18.3.1",
         "react-hook-form": "^7.56.4",
         "react-resizable-panels": "^3.0.2",
@@ -57,7 +59,7 @@
         "tailwindcss-animate": "^1.0.7",
         "typescript": "^5.5.3",
         "vaul": "^1.1.2",
-        "zustand": "^5.0.2"
+        "zustand": "^5.0.5"
     },
     "overrides": {
         "drizzle-orm": "0.41.0-29155cc"
