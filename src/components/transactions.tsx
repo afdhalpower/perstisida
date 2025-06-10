@@ -113,6 +113,28 @@ export function Transactions() {
   const removeCartItem = (id: string) => {
     setCartItems(cartItems.filter(item => item.id !== id));
   };
+
+  const handleDiscountChange = (value: number) => {
+    const totalSell = cartItems.reduce((sum, item) => sum + (item.sellPrice * item.quantity), 0);
+    
+    if (value < 0) {
+      setDiscountError('Diskon tidak boleh negatif');
+      return;
+    }
+    
+    if (value > totalSell) {
+      setDiscountError('Diskon tidak boleh lebih besar dari total penjualan');
+      return;
+    }
+    
+    setDiscountError('');
+    setDiscount(value);
+  };
+
+  const resetDiscount = () => {
+    setDiscount(0);
+    setDiscountError('');
+  };
   const updateOrCreateProduct = async (productData: {
     name: string;
     company: string;
