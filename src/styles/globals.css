@@ -1,9 +1,9 @@
 @import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
-
 	button,
 	[role='button'] {
 		cursor: pointer;
@@ -17,43 +17,43 @@
 
 :root {
 	--font-size: 16px;
-	--background: #ffffff;
-	--foreground: oklch(0.145 0 0);
-	--card: #ffffff;
-	--card-foreground: oklch(0.145 0 0);
-	--popover: oklch(1 0 0);
-	--popover-foreground: oklch(0.145 0 0);
-	--primary: #030213;
-	--primary-foreground: oklch(1 0 0);
-	--secondary: oklch(0.95 0.0058 264.53);
-	--secondary-foreground: #030213;
-	--muted: #ececf0;
-	--muted-foreground: #717182;
-	--accent: #e9ebef;
-	--accent-foreground: #030213;
-	--destructive: #d4183d;
+	--background: linear-gradient(135deg, #f8fffe 0%, #f0fdf4 100%);
+	--foreground: #065f46;
+	--card: rgba(255, 255, 255, 0.85);
+	--card-foreground: #047857;
+	--popover: rgba(255, 255, 255, 0.95);
+	--popover-foreground: #065f46;
+	--primary: linear-gradient(135deg, #059669 0%, #047857 100%);
+	--primary-foreground: #ffffff;
+	--secondary: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+	--secondary-foreground: #047857;
+	--muted: #f0fdf4;
+	--muted-foreground: #6b7280;
+	--accent: linear-gradient(135deg, #10b981 0%, #059669 100%);
+	--accent-foreground: #ffffff;
+	--destructive: #dc2626;
 	--destructive-foreground: #ffffff;
-	--border: rgba(0, 0, 0, 0.1);
-	--input: transparent;
-	--input-background: #f3f3f5;
-	--switch-background: #cbced4;
+	--border: rgba(5, 150, 105, 0.2);
+	--input: rgba(255, 255, 255, 0.9);
+	--input-background: rgba(240, 253, 244, 0.5);
+	--switch-background: #d1fae5;
 	--font-weight-medium: 500;
 	--font-weight-normal: 400;
-	--ring: oklch(0.708 0 0);
-	--chart-1: oklch(0.646 0.222 41.116);
-	--chart-2: oklch(0.6 0.118 184.704);
-	--chart-3: oklch(0.398 0.07 227.392);
-	--chart-4: oklch(0.828 0.189 84.429);
-	--chart-5: oklch(0.769 0.188 70.08);
-	--radius: 0.625rem;
-	--sidebar: oklch(0.985 0 0);
-	--sidebar-foreground: oklch(0.145 0 0);
-	--sidebar-primary: #030213;
-	--sidebar-primary-foreground: oklch(0.985 0 0);
-	--sidebar-accent: oklch(0.97 0 0);
-	--sidebar-accent-foreground: oklch(0.205 0 0);
-	--sidebar-border: oklch(0.922 0 0);
-	--sidebar-ring: oklch(0.708 0 0);
+	--ring: #10b981;
+	--chart-1: #059669;
+	--chart-2: #10b981;
+	--chart-3: #34d399;
+	--chart-4: #6ee7b7;
+	--chart-5: #a7f3d0;
+	--radius: 1rem;
+	--sidebar: rgba(255, 255, 255, 0.9);
+	--sidebar-foreground: #047857;
+	--sidebar-primary: #059669;
+	--sidebar-primary-foreground: #ffffff;
+	--sidebar-accent: rgba(16, 185, 129, 0.1);
+	--sidebar-accent-foreground: #047857;
+	--sidebar-border: rgba(5, 150, 105, 0.15);
+	--sidebar-ring: #10b981;
 }
 
 @theme inline {
@@ -103,33 +103,71 @@
 	}
 
 	body {
-		@apply bg-background text-foreground;
+		@apply text-foreground;
+		background: var(--background);
+		font-family: 'Poppins', sans-serif;
 	}
 }
 
 @layer base {
 	h1 {
-		font-size: var(--text-2xl);
-		font-weight: var(--font-weight-medium);
-		line-height: 1.5;
+		@apply text-4xl font-bold leading-tight;
 	}
 
 	h2 {
-		font-size: var(--text-xl);
-		font-weight: var(--font-weight-medium);
-		line-height: 1.5;
+		@apply text-3xl font-semibold leading-tight;
 	}
 
 	h3 {
-		font-size: var(--text-lg);
-		font-weight: var(--font-weight-medium);
-		line-height: 1.5;
+		@apply text-2xl font-semibold leading-tight;
 	}
 
 	h4 {
-		font-size: var(--text-base);
-		font-weight: var(--font-weight-medium);
-		line-height: 1.5;
+		@apply text-xl font-medium leading-tight;
+	}
+}
+
+@layer utilities {
+	.gradient-primary {
+		background: var(--primary);
+	}
+	
+	.gradient-secondary {
+		background: var(--secondary);
+	}
+	
+	.gradient-accent {
+		background: var(--accent);
+	}
+	
+	.glass-effect {
+		backdrop-filter: blur(10px);
+		background: var(--card);
+		border: 1px solid var(--border);
+	}
+	
+	.hover-lift {
+		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	}
+	
+	.hover-lift:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 20px 25px -5px rgba(5, 150, 105, 0.1), 0 10px 10px -5px rgba(5, 150, 105, 0.04);
+	}
+	
+	.animate-stagger {
+		animation: staggerIn 0.6s ease-out forwards;
+	}
+	
+	@keyframes staggerIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 }
 

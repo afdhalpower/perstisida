@@ -1,12 +1,6 @@
 import "@/styles/globals.css";
 import React from "react";
-
-import { Geist } from 'next/font/google'
 import { type Metadata } from "next";
-
-import { DevtoolsProvider } from 'creatr-devtools'
-
-import { ThemeProvider } from 'next-themes';
 
 export const viewport = {
   width: "device-width",
@@ -16,15 +10,15 @@ export const viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Creatr",
-    template: "%s | Creatr",
+    default: "PestisidaApp - Sistem Pencatatan Penjualan Pestisida",
+    template: "%s | PestisidaApp",
   },
-  description: "A modern web application built with Next.js and TypeScript",
-  applicationName: "Creatr",
-  keywords: ["next.js", "react", "typescript", "web application"],
-  authors: [{ name: "Creatr Team" }],
-  creator: "Creatr Team",
-  publisher: "Creatr Team",
+  description: "Sistem pencatatan penjualan pestisida yang mudah dan efisien untuk kios Anda",
+  applicationName: "PestisidaApp",
+  keywords: ["pestisida", "penjualan", "kios", "pertanian", "pencatatan", "stok"],
+  authors: [{ name: "PestisidaApp Team" }],
+  creator: "PestisidaApp Team",
+  publisher: "PestisidaApp Team",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -39,28 +33,20 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Creatr",
+    title: "PestisidaApp",
   },
   formatDetection: {
     telephone: false,
   },
 };
 
-const geist = Geist({
-  subsets: ['latin'],
-})
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html suppressHydrationWarning lang="en">
-      <body className={`${geist.className} bg-background text-foreground antialiased`}>
-        <ThemeProvider attribute='class'>
-          <DevtoolsProvider>
-            {children}
-          </DevtoolsProvider>
-        </ThemeProvider>
+    <html suppressHydrationWarning lang="id">
+      <body className="min-h-screen antialiased">
+        {children}
       </body>
     </html>
   );
