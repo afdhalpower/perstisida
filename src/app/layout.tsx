@@ -54,8 +54,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <html suppressHydrationWarning lang="id">
-      <body className="min-h-screen antialiased">
+  return <html suppressHydrationWarning lang="id" data-unique-id="c60fc218-2998-4ce8-96d2-c3c5f72a91ff" data-file-name="app/layout.tsx">
+      <body className="min-h-screen antialiased" data-unique-id="5d53330c-ba2a-452a-a700-7bfea13960e8" data-file-name="app/layout.tsx" data-dynamic-text="true">
         {children}
       </body>
     </html>;
