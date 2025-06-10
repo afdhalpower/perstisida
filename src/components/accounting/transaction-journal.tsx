@@ -18,67 +18,7 @@ export function TransactionJournal() {
   const [showForm, setShowForm] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [dateFilter, setDateFilter] = useState('');
-  const journalEntries: JournalEntry[] = [{
-    id: '1',
-    date: '2024-01-05',
-    reference: 'JU-001',
-    description: 'Penjualan pestisida tunai',
-    accounts: [{
-      account: 'Kas',
-      debit: 2500000,
-      credit: 0
-    }, {
-      account: 'Penjualan',
-      debit: 0,
-      credit: 2500000
-    }]
-  }, {
-    id: '2',
-    date: '2024-01-10',
-    reference: 'JU-002',
-    description: 'Pembayaran gaji karyawan',
-    accounts: [{
-      account: 'Biaya Gaji',
-      debit: 1500000,
-      credit: 0
-    }, {
-      account: 'Kas',
-      debit: 0,
-      credit: 1500000
-    }]
-  }, {
-    id: '3',
-    date: '2024-01-15',
-    reference: 'JU-003',
-    description: 'Pembelian persediaan pestisida',
-    accounts: [{
-      account: 'Persediaan',
-      debit: 5000000,
-      credit: 0
-    }, {
-      account: 'Kas',
-      debit: 0,
-      credit: 3000000
-    }, {
-      account: 'Hutang Dagang',
-      debit: 0,
-      credit: 2000000
-    }]
-  }, {
-    id: '4',
-    date: '2024-01-20',
-    reference: 'JU-004',
-    description: 'Pembayaran sewa toko',
-    accounts: [{
-      account: 'Biaya Sewa',
-      debit: 2000000,
-      credit: 0
-    }, {
-      account: 'Kas',
-      debit: 0,
-      credit: 2000000
-    }]
-  }];
+  const journalEntries: JournalEntry[] = [];
   const filteredEntries = journalEntries.filter(entry => {
     const matchesSearch = entry.description.toLowerCase().includes(searchTerm.toLowerCase()) || entry.reference.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesDate = !dateFilter || entry.date.includes(dateFilter);

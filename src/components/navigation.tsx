@@ -112,6 +112,20 @@ export function Navigation({
             <LogOut className="w-5 h-5" />
             <span className="font-medium"><span className="editable-text">Keluar</span></span>
           </motion.button>
+          
+          <div className="mt-4 pt-4 border-t border-sidebar-border">
+            <p className="text-xs text-center text-muted-foreground">
+              <span className="editable-text">App by </span>
+              <a 
+                href="https://www.instagram.com/aaafdhal/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 font-medium transition-colors"
+              >
+                <span className="editable-text">Afdhal RZ</span>
+              </a>
+            </p>
+          </div>
         </div>
       </motion.nav>
 
