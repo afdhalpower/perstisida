@@ -7,6 +7,7 @@ import { Dashboard } from '@/components/dashboard';
 import { Products } from '@/components/products';
 import { Transactions } from '@/components/transactions';
 import { History } from '@/components/history';
+import { Accounting } from '@/components/accounting';
 export default function HomePage() {
   const [currentPage, setCurrentPage] = useState('dashboard');
   const renderPage = () => {
