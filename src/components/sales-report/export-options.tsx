@@ -30,7 +30,7 @@ export function ExportOptions({
   const [isOpen, setIsOpen] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
   const generateCSV = () => {
-    const headers = ['Date', 'Product Name', 'Company', 'Quantity', 'Cost Price', 'Sell Price', 'Revenue', 'Profit', 'Discount'];
+    const headers = ['Tanggal', 'Nama Produk', 'Perusahaan', 'Kuantitas', 'Harga Beli', 'Harga Jual', 'Pendapatan', 'Keuntungan', 'Diskon'];
     const csvData = data.map(item => [format(item.timestamp, 'yyyy-MM-dd HH:mm:ss'), item.productName, item.company, item.quantity, item.costPrice, item.sellPrice, item.sellPrice * item.quantity, item.profit, item.discount || 0]);
     const csvContent = [headers.join(','), ...csvData.map(row => row.join(','))].join('\n');
     return csvContent;

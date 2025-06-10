@@ -33,11 +33,62 @@ export function FinancialReports() {
     label: 'Tahunan'
   }];
 
-  // Data will be populated from actual transactions
-  const revenueData: any[] = [];
-  const kpiData: any[] = [];
-  const cashFlowData: any[] = [];
-  const assetData: any[] = [];
+  // Data realistis untuk bisnis pestisida
+  const revenueData = [
+    { month: 'Jan', revenue: 85000000, profit: 12750000 },
+    { month: 'Feb', revenue: 92000000, profit: 13800000 },
+    { month: 'Mar', revenue: 78000000, profit: 11700000 },
+    { month: 'Apr', revenue: 96700000, profit: 15000000 },
+    { month: 'Mei', revenue: 88000000, profit: 13200000 },
+    { month: 'Jun', revenue: 94000000, profit: 14100000 }
+  ];
+
+  const assetData = [
+    { name: 'Kas & Bank', value: 45000000, color: '#059669' },
+    { name: 'Persediaan', value: 32000000, color: '#10b981' },
+    { name: 'Piutang', value: 18000000, color: '#34d399' },
+    { name: 'Aset Tetap', value: 85000000, color: '#6ee7b7' }
+  ];
+
+  const cashFlowData = [
+    { month: 'Jan', operating: 15000000, investing: -5000000, financing: 5000000 },
+    { month: 'Feb', operating: 18000000, investing: -2000000, financing: 0 },
+    { month: 'Mar', operating: 12000000, investing: -8000000, financing: 10000000 },
+    { month: 'Apr', operating: 22000000, investing: -3000000, financing: -5000000 },
+    { month: 'Mei', operating: 16000000, investing: -6000000, financing: 2000000 },
+    { month: 'Jun', operating: 20000000, investing: -4000000, financing: 0 }
+  ];
+
+  const kpiData = [
+    {
+      label: 'Total Pendapatan',
+      value: 533700000,
+      trend: 'up',
+      change: 8.5,
+      isPercentage: false
+    },
+    {
+      label: 'Laba Bersih',
+      value: 80550000,
+      trend: 'up',
+      change: 12.3,
+      isPercentage: false
+    },
+    {
+      label: 'Margin Laba',
+      value: 15.1,
+      trend: 'up',
+      change: 2.1,
+      isPercentage: true
+    },
+    {
+      label: 'ROA',
+      value: 14.2,
+      trend: 'up',
+      change: 1.8,
+      isPercentage: true
+    }
+  ];
   const handleExport = (format: 'excel' | 'pdf') => {
     // Export functionality would be implemented here
     alert(`Mengekspor laporan dalam format ${format.toUpperCase()}`);

@@ -91,8 +91,8 @@ export function SalesCharts({
             <TrendingUp className="w-5 h-5 text-white" />
           </div>
           <div data-unique-id="49b0748b-4ca3-4c2a-a900-b0d8f10ca327" data-file-name="components/sales-report/sales-charts.tsx">
-            <h3 className="text-xl font-bold" data-unique-id="5e74f1e3-025c-49c9-b925-6934d34b3f3e" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="bdd29189-b6b1-4815-9a45-33ebefc654a4" data-file-name="components/sales-report/sales-charts.tsx">Sales Trend</span></h3>
-            <p className="text-sm text-muted-foreground" data-unique-id="beab4c3f-2915-49de-9b21-88baf0f8023a" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="905b1a08-0d28-4043-b194-f32b48724522" data-file-name="components/sales-report/sales-charts.tsx">Daily revenue and profit</span></p>
+            <h3 className="text-xl font-bold" data-unique-id="5e74f1e3-025c-49c9-b925-6934d34b3f3e" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="bdd29189-b6b1-4815-9a45-33ebefc654a4" data-file-name="components/sales-report/sales-charts.tsx">Tren Penjualan</span></h3>
+            <p className="text-sm text-muted-foreground" data-unique-id="beab4c3f-2915-49de-9b21-88baf0f8023a" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="905b1a08-0d28-4043-b194-f32b48724522" data-file-name="components/sales-report/sales-charts.tsx">Pendapatan dan keuntungan harian</span></p>
           </div>
         </div>
         
@@ -106,7 +106,7 @@ export function SalesCharts({
               <YAxis fontSize={12} tick={{
               fill: '#6b7280'
             }} tickFormatter={value => `${(value / 1000000).toFixed(1)}M`} />
-              <Tooltip formatter={(value: number, name: string) => [`Rp ${value.toLocaleString('id-ID')}`, name === 'revenue' ? 'Revenue' : 'Profit']} labelStyle={{
+              <Tooltip formatter={(value: number, name: string) => [`Rp ${value.toLocaleString('id-ID')}`, name === 'revenue' ? 'Pendapatan' : 'Keuntungan']} labelStyle={{
               color: '#374151'
             }} contentStyle={{
               backgroundColor: 'rgba(255, 255, 255, 0.95)',
@@ -151,8 +151,8 @@ export function SalesCharts({
             <PieChartIcon className="w-5 h-5 text-white" />
           </div>
           <div data-unique-id="4772975b-f2c1-45b4-9ac2-4c3159178fc0" data-file-name="components/sales-report/sales-charts.tsx">
-            <h3 className="text-xl font-bold" data-unique-id="2a107e3c-5443-425a-98b0-cc6f345c4fde" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="4b6536d6-95b8-4a29-b1d9-21c4e5b9a234" data-file-name="components/sales-report/sales-charts.tsx">Revenue by Product</span></h3>
-            <p className="text-sm text-muted-foreground" data-unique-id="a833f100-b21a-4fb1-94ba-acd66a0225f0" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="67f9957b-2513-4c98-bac5-432a68d03d3d" data-file-name="components/sales-report/sales-charts.tsx">Top 6 products</span></p>
+            <h3 className="text-xl font-bold" data-unique-id="2a107e3c-5443-425a-98b0-cc6f345c4fde" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="4b6536d6-95b8-4a29-b1d9-21c4e5b9a234" data-file-name="components/sales-report/sales-charts.tsx">Pendapatan per Produk</span></h3>
+            <p className="text-sm text-muted-foreground" data-unique-id="a833f100-b21a-4fb1-94ba-acd66a0225f0" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="67f9957b-2513-4c98-bac5-432a68d03d3d" data-file-name="components/sales-report/sales-charts.tsx">6 produk teratas</span></p>
           </div>
         </div>
         
@@ -165,7 +165,7 @@ export function SalesCharts({
             }) => `${name} ${(percent * 100).toFixed(0)}%`} labelLine={false}>
                 {pieData.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} data-unique-id="612d228e-2ad2-4367-9ce3-8340a2273df7" data-file-name="components/sales-report/sales-charts.tsx" data-dynamic-text="true" />)}
               </Pie>
-              <Tooltip formatter={(value: number) => [`Rp ${value.toLocaleString('id-ID')}`, 'Revenue']} contentStyle={{
+              <Tooltip formatter={(value: number) => [`Rp ${value.toLocaleString('id-ID')}`, 'Pendapatan']} contentStyle={{
               backgroundColor: 'rgba(255, 255, 255, 0.95)',
               border: '1px solid #e5e5e5',
               borderRadius: '12px'
@@ -190,8 +190,8 @@ export function SalesCharts({
             <BarChart3 className="w-5 h-5 text-white" />
           </div>
           <div data-unique-id="fdf6faee-8094-40c9-a1ec-f5fa885c500f" data-file-name="components/sales-report/sales-charts.tsx">
-            <h3 className="text-xl font-bold" data-unique-id="c6479835-81d2-42a6-b577-06ab22d5e2ac" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="b1c7d6d9-6bd8-4b38-8e9e-a58755f1ac56" data-file-name="components/sales-report/sales-charts.tsx">Company Performance</span></h3>
-            <p className="text-sm text-muted-foreground" data-unique-id="5161952e-37ab-493d-8ad9-dbe729c1a9a6" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="0f133f4f-324c-4d2a-ab84-4b5eb20fd9e6" data-file-name="components/sales-report/sales-charts.tsx">Revenue and profit by company</span></p>
+            <h3 className="text-xl font-bold" data-unique-id="c6479835-81d2-42a6-b577-06ab22d5e2ac" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="b1c7d6d9-6bd8-4b38-8e9e-a58755f1ac56" data-file-name="components/sales-report/sales-charts.tsx">Performa Perusahaan</span></h3>
+            <p className="text-sm text-muted-foreground" data-unique-id="5161952e-37ab-493d-8ad9-dbe729c1a9a6" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="0f133f4f-324c-4d2a-ab84-4b5eb20fd9e6" data-file-name="components/sales-report/sales-charts.tsx">Pendapatan dan keuntungan per perusahaan</span></p>
           </div>
         </div>
         
@@ -210,7 +210,7 @@ export function SalesCharts({
               <YAxis fontSize={12} tick={{
               fill: '#6b7280'
             }} tickFormatter={value => `${(value / 1000000).toFixed(1)}M`} />
-              <Tooltip formatter={(value: number, name: string) => [`Rp ${value.toLocaleString('id-ID')}`, name === 'revenue' ? 'Revenue' : 'Profit']} labelStyle={{
+              <Tooltip formatter={(value: number, name: string) => [`Rp ${value.toLocaleString('id-ID')}`, name === 'revenue' ? 'Pendapatan' : 'Keuntungan']} labelStyle={{
               color: '#374151'
             }} contentStyle={{
               backgroundColor: 'rgba(255, 255, 255, 0.95)',

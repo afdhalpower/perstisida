@@ -18,7 +18,95 @@ export function TransactionJournal() {
   const [showForm, setShowForm] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [dateFilter, setDateFilter] = useState('');
-  const journalEntries: JournalEntry[] = [];
+  const journalEntries: JournalEntry[] = [
+    {
+      id: '1',
+      date: '2024-01-15',
+      reference: 'JU-001',
+      description: 'Penjualan pestisida ke PT Agro Makmur',
+      accounts: [
+        { account: 'Piutang Dagang', debit: 25000000, credit: 0 },
+        { account: 'Pendapatan Penjualan', debit: 0, credit: 22321429 },
+        { account: 'PPN Keluaran', debit: 0, credit: 2678571 }
+      ]
+    },
+    {
+      id: '2',
+      date: '2024-01-16',
+      reference: 'JU-002',
+      description: 'Pembelian pestisida dari PT Kimia Farma',
+      accounts: [
+        { account: 'Persediaan Pestisida', debit: 18000000, credit: 0 },
+        { account: 'PPN Masukan', debit: 1800000, credit: 0 },
+        { account: 'Hutang Dagang', debit: 0, credit: 19800000 }
+      ]
+    },
+    {
+      id: '3',
+      date: '2024-01-18',
+      reference: 'JU-003',
+      description: 'Pembayaran gaji karyawan bulan Januari',
+      accounts: [
+        { account: 'Biaya Gaji', debit: 8000000, credit: 0 },
+        { account: 'Kas', debit: 0, credit: 8000000 }
+      ]
+    },
+    {
+      id: '4',
+      date: '2024-01-20',
+      reference: 'JU-004',
+      description: 'Penjualan tunai pestisida ke CV Tani Sejahtera',
+      accounts: [
+        { account: 'Kas', debit: 15000000, credit: 0 },
+        { account: 'Pendapatan Penjualan', debit: 0, credit: 13392857 },
+        { account: 'PPN Keluaran', debit: 0, credit: 1607143 }
+      ]
+    },
+    {
+      id: '5',
+      date: '2024-01-22',
+      reference: 'JU-005',
+      description: 'Pembayaran biaya listrik dan air',
+      accounts: [
+        { account: 'Biaya Listrik', debit: 1500000, credit: 0 },
+        { account: 'Biaya Air', debit: 500000, credit: 0 },
+        { account: 'PPN Masukan', debit: 200000, credit: 0 },
+        { account: 'Kas', debit: 0, credit: 2200000 }
+      ]
+    },
+    {
+      id: '6',
+      date: '2024-01-25',
+      reference: 'JU-006',
+      description: 'Penerimaan pembayaran dari PT Agro Makmur',
+      accounts: [
+        { account: 'Kas', debit: 25000000, credit: 0 },
+        { account: 'Piutang Dagang', debit: 0, credit: 25000000 }
+      ]
+    },
+    {
+      id: '7',
+      date: '2024-01-28',
+      reference: 'JU-007',
+      description: 'Pembelian peralatan semprot',
+      accounts: [
+        { account: 'Peralatan', debit: 12000000, credit: 0 },
+        { account: 'PPN Masukan', debit: 1200000, credit: 0 },
+        { account: 'Kas', debit: 0, credit: 13200000 }
+      ]
+    },
+    {
+      id: '8',
+      date: '2024-01-30',
+      reference: 'JU-008',
+      description: 'Penjualan pestisida ke Koperasi Tani Maju',
+      accounts: [
+        { account: 'Piutang Dagang', debit: 8500000, credit: 0 },
+        { account: 'Pendapatan Penjualan', debit: 0, credit: 7589286 },
+        { account: 'PPN Keluaran', debit: 0, credit: 910714 }
+      ]
+    }
+  ];
   const filteredEntries = journalEntries.filter(entry => {
     const matchesSearch = entry.description.toLowerCase().includes(searchTerm.toLowerCase()) || entry.reference.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesDate = !dateFilter || entry.date.includes(dateFilter);

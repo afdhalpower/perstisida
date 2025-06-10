@@ -94,10 +94,10 @@ export function SalesReport() {
           </div>
           <div data-unique-id="bcaf6e12-e6fb-41d6-90cb-b084b069fb77" data-file-name="components/sales-report.tsx">
             <h1 className="text-4xl font-bold text-foreground" data-unique-id="eef91aae-9cec-4151-baf8-a111b14bd80d" data-file-name="components/sales-report.tsx"><span className="editable-text" data-unique-id="a2969d7c-6834-4744-ad89-a05270cba5c1" data-file-name="components/sales-report.tsx">
-              Sales Report Dashboard
+              Dashboard Laporan Penjualan
             </span></h1>
             <p className="text-lg text-muted-foreground" data-unique-id="78811f49-9fea-4e7e-99a3-8319be6d3745" data-file-name="components/sales-report.tsx"><span className="editable-text" data-unique-id="e05733c5-da62-4f16-a64c-c955dd3fb806" data-file-name="components/sales-report.tsx">
-              Comprehensive sales analysis and insights
+              Analisis dan wawasan penjualan yang komprehensif
             </span></p>
           </div>
         </div>
@@ -121,10 +121,10 @@ export function SalesReport() {
         <div className="flex items-center gap-2 text-sm text-muted-foreground" data-unique-id="f1f85103-91e0-4293-9674-09a3c953b539" data-file-name="components/sales-report.tsx">
           <Calendar className="w-4 h-4" data-unique-id="3f95a229-c99d-4339-b78b-e827483e91bb" data-file-name="components/sales-report.tsx" />
           <span data-unique-id="ce50a6a1-a200-471c-b228-51de476fcf71" data-file-name="components/sales-report.tsx" data-dynamic-text="true"><span className="editable-text" data-unique-id="db8d0fa5-9deb-4fa4-8ed6-afd7a12cf128" data-file-name="components/sales-report.tsx">
-            Showing data from </span>{format(dateRange.startDate, 'MMM dd, yyyy')}<span className="editable-text" data-unique-id="837e5bed-36f5-4e82-8165-983ec9d73f66" data-file-name="components/sales-report.tsx"> to </span>{format(dateRange.endDate, 'MMM dd, yyyy')}
+            Menampilkan data dari </span>{format(dateRange.startDate, 'MMM dd, yyyy')}<span className="editable-text" data-unique-id="837e5bed-36f5-4e82-8165-983ec9d73f66" data-file-name="components/sales-report.tsx"> hingga </span>{format(dateRange.endDate, 'MMM dd, yyyy')}
           </span>
           <span className="ml-4 font-medium text-primary" data-unique-id="a1606cf0-c2b6-4f11-b295-4f753c02b1a9" data-file-name="components/sales-report.tsx" data-dynamic-text="true">
-            {filteredData.length}<span className="editable-text" data-unique-id="a2634988-4304-43b1-9824-d12b419ef07f" data-file-name="components/sales-report.tsx"> transactions
+            {filteredData.length}<span className="editable-text" data-unique-id="a2634988-4304-43b1-9824-d12b419ef07f" data-file-name="components/sales-report.tsx"> transaksi
           </span></span>
         </div>
       </motion.div>

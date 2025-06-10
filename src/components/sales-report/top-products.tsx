@@ -71,8 +71,8 @@ export function TopProducts({
             <Package className="w-5 h-5 text-white" />
           </div>
           <div data-unique-id="a9f7f4d8-f623-4e3e-826a-b9a278699c8e" data-file-name="components/sales-report/top-products.tsx">
-            <h2 className="text-xl font-bold" data-unique-id="a1e518fb-ce32-4430-8bba-1089a47d7de1" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="18b69f73-3831-4644-9aca-4d2335a7af63" data-file-name="components/sales-report/top-products.tsx">Top-Selling Products</span></h2>
-            <p className="text-sm text-muted-foreground" data-unique-id="6c40e119-ac70-4e59-aee5-04b7e1703999" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="8c273109-739d-4331-823d-31172bc41ce9" data-file-name="components/sales-report/top-products.tsx">Sorted by quantity sold</span></p>
+            <h2 className="text-xl font-bold" data-unique-id="a1e518fb-ce32-4430-8bba-1089a47d7de1" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="18b69f73-3831-4644-9aca-4d2335a7af63" data-file-name="components/sales-report/top-products.tsx">Produk Terlaris</span></h2>
+            <p className="text-sm text-muted-foreground" data-unique-id="6c40e119-ac70-4e59-aee5-04b7e1703999" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="8c273109-739d-4331-823d-31172bc41ce9" data-file-name="components/sales-report/top-products.tsx">Diurutkan berdasarkan jumlah terjual</span></p>
           </div>
         </div>
 
@@ -101,13 +101,13 @@ export function TopProducts({
               <div className="flex items-center gap-6" data-unique-id="e074d43a-533d-4f14-9977-50c50546bddf" data-file-name="components/sales-report/top-products.tsx">
                 <div className="text-right" data-unique-id="89eb6fac-9526-495e-b014-3ad3d43f8789" data-file-name="components/sales-report/top-products.tsx">
                   <p className="font-bold text-lg" data-unique-id="176959e3-d09b-40a3-8b3a-edcab7b2b32b" data-file-name="components/sales-report/top-products.tsx" data-dynamic-text="true">{product.totalQuantity}</p>
-                  <p className="text-xs text-muted-foreground" data-unique-id="d3637ec4-0f27-4348-9b17-ea1968d1ea07" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="104e3282-cfe2-4070-9ab1-759b426b0f62" data-file-name="components/sales-report/top-products.tsx">units sold</span></p>
+                  <p className="text-xs text-muted-foreground" data-unique-id="d3637ec4-0f27-4348-9b17-ea1968d1ea07" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="104e3282-cfe2-4070-9ab1-759b426b0f62" data-file-name="components/sales-report/top-products.tsx">unit terjual</span></p>
                 </div>
                 <div className="text-right" data-unique-id="c3f99daf-af79-4291-8a90-b603309c0b4c" data-file-name="components/sales-report/top-products.tsx">
                   <p className="font-semibold text-green-600" data-unique-id="ba624f00-b83c-4185-813a-9433c9836122" data-file-name="components/sales-report/top-products.tsx" data-dynamic-text="true"><span className="editable-text" data-unique-id="8531b76f-7a2c-41d7-8070-1ced0cbdf5d0" data-file-name="components/sales-report/top-products.tsx">
                     Rp </span>{product.totalRevenue.toLocaleString('id-ID')}
                   </p>
-                  <p className="text-xs text-muted-foreground" data-unique-id="c092ae99-de4e-48e5-8681-3ee40301d197" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="c577f59d-bdea-4e5f-96b4-dc42740fa350" data-file-name="components/sales-report/top-products.tsx">revenue</span></p>
+                  <p className="text-xs text-muted-foreground" data-unique-id="c092ae99-de4e-48e5-8681-3ee40301d197" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="c577f59d-bdea-4e5f-96b4-dc42740fa350" data-file-name="components/sales-report/top-products.tsx">pendapatan</span></p>
                 </div>
                 <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" data-unique-id="29a033cd-4686-42cf-8bde-a802408f2779" data-file-name="components/sales-report/top-products.tsx" data-dynamic-text="true" />
               </div>
@@ -116,7 +116,7 @@ export function TopProducts({
 
         {topProducts.length === 0 && <div className="text-center py-8" data-unique-id="a83dd2ea-43b6-40f6-81b9-963cb80ce496" data-file-name="components/sales-report/top-products.tsx">
             <Package className="w-12 h-12 text-muted-foreground mx-auto mb-3" />
-            <p className="text-muted-foreground" data-unique-id="c08000b6-3e60-4955-9209-c0d3b41ec535" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="11ac2e3e-2c6e-44a0-8414-bb9431101f4d" data-file-name="components/sales-report/top-products.tsx">No product data available for this date range</span></p>
+            <p className="text-muted-foreground" data-unique-id="c08000b6-3e60-4955-9209-c0d3b41ec535" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="11ac2e3e-2c6e-44a0-8414-bb9431101f4d" data-file-name="components/sales-report/top-products.tsx">Tidak ada data produk tersedia untuk rentang tanggal ini</span></p>
           </div>}
       </motion.div>
 
@@ -144,7 +144,7 @@ export function TopProducts({
                 <div className="flex items-center justify-between mb-6" data-unique-id="b26c3bc6-8992-47c1-a1d9-40b84ae60ba7" data-file-name="components/sales-report/top-products.tsx">
                   <div className="flex items-center gap-3" data-unique-id="2bc129d3-62cc-4bbc-9cd8-05da6d69b8df" data-file-name="components/sales-report/top-products.tsx">
                     <Eye className="w-5 h-5 text-primary" />
-                    <h3 className="text-lg font-bold" data-unique-id="3145d392-94ad-4814-98f8-1d0fc9429713" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="ded13d9f-2713-4faa-8290-9885157db303" data-file-name="components/sales-report/top-products.tsx">Product Details</span></h3>
+                    <h3 className="text-lg font-bold" data-unique-id="3145d392-94ad-4814-98f8-1d0fc9429713" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="ded13d9f-2713-4faa-8290-9885157db303" data-file-name="components/sales-report/top-products.tsx">Detail Produk</span></h3>
                   </div>
                   <button onClick={() => setShowDetails(false)} className="w-6 h-6 rounded-full hover:bg-accent/50 flex items-center justify-center" data-unique-id="e4e6a6a4-bd4a-42a5-8b39-8bf10e938f9e" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="9ae15db9-36ed-46d9-8e8e-e49629393c5f" data-file-name="components/sales-report/top-products.tsx">
                     ×
@@ -159,25 +159,25 @@ export function TopProducts({
 
                   <div className="grid grid-cols-2 gap-4" data-unique-id="89cb6a76-56b4-4b7b-99e7-86a269971be4" data-file-name="components/sales-report/top-products.tsx">
                     <div className="p-3 rounded-lg bg-blue-50" data-unique-id="31ef13f7-09f2-4f01-80dd-f18791719465" data-file-name="components/sales-report/top-products.tsx">
-                      <p className="text-sm text-blue-700" data-unique-id="d79329a2-bebb-489e-bf5f-075f9d92bd04" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="eb2c528b-93a5-4306-83ea-3e7aa9311dda" data-file-name="components/sales-report/top-products.tsx">Total Quantity</span></p>
+                      <p className="text-sm text-blue-700" data-unique-id="d79329a2-bebb-489e-bf5f-075f9d92bd04" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="eb2c528b-93a5-4306-83ea-3e7aa9311dda" data-file-name="components/sales-report/top-products.tsx">Total Kuantitas</span></p>
                       <p className="text-xl font-bold text-blue-600" data-unique-id="d33360cc-3788-42df-952d-30df5cf4e071" data-file-name="components/sales-report/top-products.tsx" data-dynamic-text="true">
                         {selectedProduct.totalQuantity}
                       </p>
                     </div>
                     <div className="p-3 rounded-lg bg-green-50" data-unique-id="a7c73199-bd78-4543-85b0-a9fb3de3c44b" data-file-name="components/sales-report/top-products.tsx">
-                      <p className="text-sm text-green-700" data-unique-id="f4daef39-80c3-42cb-9fdd-927db598b3ef" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="5bb92658-8063-42af-8730-59fb0ceff8c8" data-file-name="components/sales-report/top-products.tsx">Total Revenue</span></p>
+                      <p className="text-sm text-green-700" data-unique-id="f4daef39-80c3-42cb-9fdd-927db598b3ef" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="5bb92658-8063-42af-8730-59fb0ceff8c8" data-file-name="components/sales-report/top-products.tsx">Total Pendapatan</span></p>
                       <p className="text-xl font-bold text-green-600" data-unique-id="f35e2685-ef3d-4ad0-8ee6-d165f50f5a46" data-file-name="components/sales-report/top-products.tsx" data-dynamic-text="true"><span className="editable-text" data-unique-id="5b651ecb-e155-4940-afc5-c8312d04a515" data-file-name="components/sales-report/top-products.tsx">
                         Rp </span>{selectedProduct.totalRevenue.toLocaleString('id-ID')}
                       </p>
                     </div>
                     <div className="p-3 rounded-lg bg-purple-50" data-unique-id="ce46a39f-f1cc-46de-9cd5-59c62ad4ad86" data-file-name="components/sales-report/top-products.tsx">
-                      <p className="text-sm text-purple-700" data-unique-id="8a40d039-25dd-4d56-b1d9-c50562609da8" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="0f6b6ea7-9769-4361-b5a0-5cf2c6d505b6" data-file-name="components/sales-report/top-products.tsx">Total Profit</span></p>
+                      <p className="text-sm text-purple-700" data-unique-id="8a40d039-25dd-4d56-b1d9-c50562609da8" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="0f6b6ea7-9769-4361-b5a0-5cf2c6d505b6" data-file-name="components/sales-report/top-products.tsx">Total Keuntungan</span></p>
                       <p className="text-xl font-bold text-purple-600" data-unique-id="c2c60334-c6a3-4cc5-b9c9-3723acf67d5d" data-file-name="components/sales-report/top-products.tsx" data-dynamic-text="true"><span className="editable-text" data-unique-id="d997d86e-9fad-4d22-9fb7-1e7abf139afd" data-file-name="components/sales-report/top-products.tsx">
                         Rp </span>{selectedProduct.totalProfit.toLocaleString('id-ID')}
                       </p>
                     </div>
                     <div className="p-3 rounded-lg bg-orange-50" data-unique-id="1e9cf6c8-d32f-40c3-af0d-6f12bc2859dc" data-file-name="components/sales-report/top-products.tsx">
-                      <p className="text-sm text-orange-700" data-unique-id="49d47211-4551-4dbe-a7da-cdd030d0e651" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="19ea73c9-9b01-4dfb-86b6-e1ea87a78f77" data-file-name="components/sales-report/top-products.tsx">Avg Price</span></p>
+                      <p className="text-sm text-orange-700" data-unique-id="49d47211-4551-4dbe-a7da-cdd030d0e651" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="19ea73c9-9b01-4dfb-86b6-e1ea87a78f77" data-file-name="components/sales-report/top-products.tsx">Harga Rata-rata</span></p>
                       <p className="text-xl font-bold text-orange-600" data-unique-id="dba8fa7f-2e6b-45f5-b20b-e93e05f4b3cd" data-file-name="components/sales-report/top-products.tsx" data-dynamic-text="true"><span className="editable-text" data-unique-id="2fcb4591-b2f9-48ee-9157-e8b6016926ff" data-file-name="components/sales-report/top-products.tsx">
                         Rp </span>{selectedProduct.averagePrice.toLocaleString('id-ID')}
                       </p>
@@ -185,8 +185,8 @@ export function TopProducts({
                   </div>
 
                   <div className="p-3 rounded-lg bg-gray-50" data-unique-id="0e8c33bb-7fbb-4891-adc3-984318fcfc78" data-file-name="components/sales-report/top-products.tsx">
-                    <p className="text-sm text-gray-700" data-unique-id="a45f3e92-336c-4d5a-a551-c5712ab82c50" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="167528f0-27ac-4803-96eb-582a1f41f607" data-file-name="components/sales-report/top-products.tsx">Transactions</span></p>
-                    <p className="text-lg font-semibold" data-unique-id="c48812af-261b-4906-add3-34f54e6b79f8" data-file-name="components/sales-report/top-products.tsx" data-dynamic-text="true">{selectedProduct.transactionCount}<span className="editable-text" data-unique-id="0e399310-dc16-4716-9f69-6250a70da519" data-file-name="components/sales-report/top-products.tsx"> orders</span></p>
+                    <p className="text-sm text-gray-700" data-unique-id="a45f3e92-336c-4d5a-a551-c5712ab82c50" data-file-name="components/sales-report/top-products.tsx"><span className="editable-text" data-unique-id="167528f0-27ac-4803-96eb-582a1f41f607" data-file-name="components/sales-report/top-products.tsx">Transaksi</span></p>
+                    <p className="text-lg font-semibold" data-unique-id="c48812af-261b-4906-add3-34f54e6b79f8" data-file-name="components/sales-report/top-products.tsx" data-dynamic-text="true">{selectedProduct.transactionCount}<span className="editable-text" data-unique-id="0e399310-dc16-4716-9f69-6250a70da519" data-file-name="components/sales-report/top-products.tsx"> pesanan</span></p>
                   </div>
                 </div>
               </div>

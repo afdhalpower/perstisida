@@ -4,9 +4,59 @@ import { motion } from 'framer-motion';
 import { TrendingUp, BarChart3, Target, AlertTriangle, CheckCircle, Info } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, BarChart, Bar } from 'recharts';
 export function FinancialAnalysis() {
-  const ratioTrends: any[] = [];
-  const currentRatios: any[] = [];
-  const comparisonData: any[] = [];
+  const ratioTrends = [
+    { month: 'Jan', currentRatio: 2.1, quickRatio: 1.8, debtRatio: 0.35, roe: 18.5 },
+    { month: 'Feb', currentRatio: 2.3, quickRatio: 1.9, debtRatio: 0.33, roe: 19.2 },
+    { month: 'Mar', currentRatio: 2.2, quickRatio: 1.7, debtRatio: 0.36, roe: 17.8 },
+    { month: 'Apr', currentRatio: 2.4, quickRatio: 2.0, debtRatio: 0.32, roe: 20.1 },
+    { month: 'Mei', currentRatio: 2.1, quickRatio: 1.6, debtRatio: 0.38, roe: 16.9 },
+    { month: 'Jun', currentRatio: 2.5, quickRatio: 2.1, debtRatio: 0.30, roe: 21.5 }
+  ];
+
+  const currentRatios = [
+    {
+      name: 'Likuiditas',
+      ratios: [
+        { name: 'Current Ratio', value: 2.4, benchmark: 2.0, status: 'excellent', description: 'Kemampuan membayar hutang jangka pendek' },
+        { name: 'Quick Ratio', value: 2.1, benchmark: 1.5, status: 'excellent', description: 'Likuiditas tanpa persediaan' },
+        { name: 'Cash Ratio', value: 0.8, benchmark: 0.5, status: 'excellent', description: 'Kemampuan bayar dengan kas' }
+      ]
+    },
+    {
+      name: 'Profitabilitas',
+      ratios: [
+        { name: 'ROE', value: 21.5, benchmark: 15.0, status: 'excellent', description: 'Return on Equity' },
+        { name: 'ROA', value: 14.2, benchmark: 10.0, status: 'excellent', description: 'Return on Assets' },
+        { name: 'Gross Margin', value: 40.0, benchmark: 35.0, status: 'excellent', description: 'Margin kotor penjualan' },
+        { name: 'Net Margin', value: 16.8, benchmark: 12.0, status: 'excellent', description: 'Margin bersih penjualan' }
+      ]
+    },
+    {
+      name: 'Leverage',
+      ratios: [
+        { name: 'Debt to Equity', value: 0.45, benchmark: 0.60, status: 'good', description: 'Rasio hutang terhadap ekuitas' },
+        { name: 'Debt Ratio', value: 0.30, benchmark: 0.40, status: 'good', description: 'Rasio total hutang' },
+        { name: 'Interest Coverage', value: 8.5, benchmark: 5.0, status: 'excellent', description: 'Kemampuan bayar bunga' }
+      ]
+    },
+    {
+      name: 'Aktivitas',
+      ratios: [
+        { name: 'Inventory Turnover', value: 6.2, benchmark: 4.0, status: 'excellent', description: 'Perputaran persediaan' },
+        { name: 'Receivables Turnover', value: 8.4, benchmark: 6.0, status: 'excellent', description: 'Perputaran piutang' },
+        { name: 'Asset Turnover', value: 1.2, benchmark: 1.0, status: 'good', description: 'Perputaran aset' }
+      ]
+    }
+  ];
+
+  const comparisonData = [
+    { subject: 'Likuiditas', perusahaan: 85, industri: 70, fullMark: 100 },
+    { subject: 'Profitabilitas', perusahaan: 92, industri: 75, fullMark: 100 },
+    { subject: 'Leverage', perusahaan: 78, industri: 65, fullMark: 100 },
+    { subject: 'Aktivitas', perusahaan: 88, industri: 72, fullMark: 100 },
+    { subject: 'Efisiensi', perusahaan: 82, industri: 68, fullMark: 100 },
+    { subject: 'Stabilitas', perusahaan: 86, industri: 71, fullMark: 100 }
+  ];
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'excellent':

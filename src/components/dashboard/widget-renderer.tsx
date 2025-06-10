@@ -2,34 +2,13 @@
 
 import { TrendingUp, DollarSign, Package, ShoppingCart } from 'lucide-react';
 import { Widget } from '@/types/widget';
+import { DashboardStats } from '@/types';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell } from 'recharts';
 interface WidgetRendererProps {
   widget: Widget;
+  stats: DashboardStats;
+  chartData?: any[];
 }
-
-// Mock data for demonstration
-const mockData = {
-  todayTransactions: 24,
-  todayProfit: 1250000,
-  totalProducts: 156,
-  monthlyRevenue: 45000000,
-  chartData: [{
-    name: 'Mon',
-    value: 400
-  }, {
-    name: 'Tue',
-    value: 300
-  }, {
-    name: 'Wed',
-    value: 600
-  }, {
-    name: 'Thu',
-    value: 800
-  }, {
-    name: 'Fri',
-    value: 500
-  }]
-};
 const colorMap = {
   blue: {
     bg: 'bg-blue-50',
@@ -68,10 +47,12 @@ const colorMap = {
   }
 };
 export function WidgetRenderer({
-  widget
+  widget,
+  stats,
+  chartData = []
 }: WidgetRendererProps) {
   const colors = colorMap[widget.color as keyof typeof colorMap] || colorMap.blue;
-  const value = mockData[widget.metric as keyof typeof mockData] || 0;
+  const value = stats[widget.metric as keyof DashboardStats] || 0;
   const getIcon = () => {
     switch (widget.metric) {
       case 'todayTransactions':
@@ -115,7 +96,7 @@ export function WidgetRenderer({
             </div>
             <div className="h-32" data-unique-id="1e12f98b-2484-4604-b419-d34a021df090" data-file-name="components/dashboard/widget-renderer.tsx">
               <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={mockData.chartData}>
+                <BarChart data={chartData}>
                   <XAxis dataKey="name" hide />
                   <YAxis hide />
                   <Bar dataKey="value" fill={colors.chart} radius={[4, 4, 0, 0]} />
@@ -131,7 +112,7 @@ export function WidgetRenderer({
             </div>
             <div className="h-32" data-unique-id="af1c559d-48d5-4b4b-9a5b-1cb5f67aa2aa" data-file-name="components/dashboard/widget-renderer.tsx">
               <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={mockData.chartData}>
+                <LineChart data={chartData}>
                   <XAxis dataKey="name" hide />
                   <YAxis hide />
                   <Line type="monotone" dataKey="value" stroke={colors.chart} strokeWidth={3} dot={{

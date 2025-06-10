@@ -17,8 +17,131 @@ export function GeneralLedger() {
   const [searchTerm, setSearchTerm] = useState('');
   const [dateFrom, setDateFrom] = useState('2024-01-01');
   const [dateTo, setDateTo] = useState('2024-12-31');
-  const accounts: any[] = [];
-  const ledgerEntries: LedgerEntry[] = [];
+  const accounts = [
+    {
+      id: 'cash',
+      name: 'Kas',
+      balance: 125000000,
+      type: 'asset'
+    },
+    {
+      id: 'accounts-receivable',
+      name: 'Piutang Dagang',
+      balance: 85000000,
+      type: 'asset'
+    },
+    {
+      id: 'inventory',
+      name: 'Persediaan Pestisida',
+      balance: 450000000,
+      type: 'asset'
+    },
+    {
+      id: 'equipment',
+      name: 'Peralatan',
+      balance: 75000000,
+      type: 'asset'
+    },
+    {
+      id: 'accounts-payable',
+      name: 'Hutang Dagang',
+      balance: -65000000,
+      type: 'liability'
+    },
+    {
+      id: 'sales-revenue',
+      name: 'Pendapatan Penjualan',
+      balance: -850000000,
+      type: 'revenue'
+    },
+    {
+      id: 'cost-of-goods',
+      name: 'Harga Pokok Penjualan',
+      balance: 520000000,
+      type: 'expense'
+    },
+    {
+      id: 'operating-expenses',
+      name: 'Biaya Operasional',
+      balance: 180000000,
+      type: 'expense'
+    }
+  ];
+
+  const ledgerEntries: LedgerEntry[] = [
+    {
+      id: '1',
+      date: '2024-01-15',
+      description: 'Penjualan pestisida ke PT Agro Makmur',
+      debit: 0,
+      credit: 25000000,
+      balance: 125000000,
+      reference: 'INV-001'
+    },
+    {
+      id: '2',
+      date: '2024-01-16',
+      description: 'Pembelian pestisida dari supplier',
+      debit: 18000000,
+      credit: 0,
+      balance: 107000000,
+      reference: 'PO-001'
+    },
+    {
+      id: '3',
+      date: '2024-01-18',
+      description: 'Pembayaran gaji karyawan',
+      debit: 8000000,
+      credit: 0,
+      balance: 99000000,
+      reference: 'PAY-001'
+    },
+    {
+      id: '4',
+      date: '2024-01-20',
+      description: 'Penjualan pestisida ke CV Tani Sejahtera',
+      debit: 0,
+      credit: 15000000,
+      balance: 114000000,
+      reference: 'INV-002'
+    },
+    {
+      id: '5',
+      date: '2024-01-22',
+      description: 'Pembayaran listrik dan air',
+      debit: 2500000,
+      credit: 0,
+      balance: 111500000,
+      reference: 'UTIL-001'
+    },
+    {
+      id: '6',
+      date: '2024-01-25',
+      description: 'Penerimaan pembayaran dari PT Agro Makmur',
+      debit: 0,
+      credit: 25000000,
+      balance: 136500000,
+      reference: 'REC-001'
+    },
+    {
+      id: '7',
+      date: '2024-01-28',
+      description: 'Pembelian peralatan semprot',
+      debit: 12000000,
+      credit: 0,
+      balance: 124500000,
+      reference: 'EQ-001'
+    },
+    {
+      id: '8',
+      date: '2024-01-30',
+      description: 'Penjualan pestisida ke Koperasi Tani',
+      debit: 0,
+      credit: 8500000,
+      balance: 133000000,
+      reference: 'INV-003'
+    }
+  ];
   const selectedAccountData = accounts.find(acc => acc.id === selectedAccount);
   const filteredEntries = ledgerEntries.filter(entry => {
     const matchesSearch = entry.description.toLowerCase().includes(searchTerm.toLowerCase()) || entry.reference.toLowerCase().includes(searchTerm.toLowerCase());

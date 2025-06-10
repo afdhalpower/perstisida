@@ -7,9 +7,72 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 type BudgetPeriod = '2024' | '2023';
 export function BudgetRealization() {
   const [selectedPeriod, setSelectedPeriod] = useState<BudgetPeriod>('2024');
-  const budgetData: any[] = [];
-  const monthlyBudget: any[] = [];
-  const expenseBreakdown: any[] = [];
+  const budgetData = [
+    {
+      category: 'Pendapatan Penjualan',
+      budget: 1200000000,
+      actual: 980000000,
+      variance: -220000000,
+      percentage: 81.7,
+      status: 'warning'
+    },
+    {
+      category: 'Harga Pokok Penjualan',
+      budget: 720000000,
+      actual: 588000000,
+      variance: 132000000,
+      percentage: 81.7,
+      status: 'good'
+    },
+    {
+      category: 'Biaya Operasional',
+      budget: 240000000,
+      actual: 195000000,
+      variance: 45000000,
+      percentage: 81.3,
+      status: 'good'
+    },
+    {
+      category: 'Biaya Pemasaran',
+      budget: 60000000,
+      actual: 72000000,
+      variance: -12000000,
+      percentage: 120.0,
+      status: 'below'
+    },
+    {
+      category: 'Biaya Administrasi',
+      budget: 48000000,
+      actual: 38400000,
+      variance: 9600000,
+      percentage: 80.0,
+      status: 'good'
+    }
+  ];
+
+  const monthlyBudget = [
+    { month: 'Jan', budget: 100000000, actual: 85000000 },
+    { month: 'Feb', budget: 100000000, actual: 92000000 },
+    { month: 'Mar', budget: 100000000, actual: 88000000 },
+    { month: 'Apr', budget: 100000000, actual: 95000000 },
+    { month: 'Mei', budget: 100000000, actual: 78000000 },
+    { month: 'Jun', budget: 100000000, actual: 102000000 },
+    { month: 'Jul', budget: 100000000, actual: 96000000 },
+    { month: 'Agu', budget: 100000000, actual: 89000000 },
+    { month: 'Sep', budget: 100000000, actual: 93000000 },
+    { month: 'Okt', budget: 100000000, actual: 87000000 },
+    { month: 'Nov', budget: 100000000, actual: 91000000 },
+    { month: 'Des', budget: 100000000, actual: 84000000 }
+  ];
+
+  const expenseBreakdown = [
+    { name: 'Pembelian Pestisida', value: 588000000, color: '#8884d8' },
+    { name: 'Gaji Karyawan', value: 96000000, color: '#82ca9d' },
+    { name: 'Biaya Transportasi', value: 48000000, color: '#ffc658' },
+    { name: 'Biaya Pemasaran', value: 72000000, color: '#ff7300' },
+    { name: 'Biaya Administrasi', value: 38400000, color: '#00ff88' },
+    { name: 'Biaya Lainnya', value: 24000000, color: '#ff0088' }
+  ];
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'good':

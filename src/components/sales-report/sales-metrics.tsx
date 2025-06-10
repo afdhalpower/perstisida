@@ -27,7 +27,7 @@ export function SalesMetrics({
   const averageOrderValue = totalTransactions > 0 ? totalRevenue / totalTransactions : 0;
   const profitMargin = totalRevenue > 0 ? totalProfit / totalRevenue * 100 : 0;
   const metrics = [{
-    title: 'Total Revenue',
+    title: 'Total Pendapatan',
     value: `Rp ${totalRevenue.toLocaleString('id-ID')}`,
     icon: DollarSign,
     color: 'text-green-600',
@@ -35,7 +35,7 @@ export function SalesMetrics({
     change: '+12.5%',
     trend: 'up'
   }, {
-    title: 'Total Profit',
+    title: 'Total Keuntungan',
     value: `Rp ${totalProfit.toLocaleString('id-ID')}`,
     icon: TrendingUp,
     color: 'text-blue-600',
@@ -43,7 +43,7 @@ export function SalesMetrics({
     change: '+8.3%',
     trend: 'up'
   }, {
-    title: 'Items Sold',
+    title: 'Barang Terjual',
     value: totalQuantity.toLocaleString('id-ID'),
     icon: Package,
     color: 'text-purple-600',
@@ -51,7 +51,7 @@ export function SalesMetrics({
     change: '+15.2%',
     trend: 'up'
   }, {
-    title: 'Total Discounts',
+    title: 'Total Diskon',
     value: `Rp ${totalDiscounts.toLocaleString('id-ID')}`,
     icon: Percent,
     color: 'text-orange-600',
@@ -59,7 +59,7 @@ export function SalesMetrics({
     change: '-5.1%',
     trend: 'down'
   }, {
-    title: 'Transactions',
+    title: 'Transaksi',
     value: totalTransactions.toLocaleString('id-ID'),
     icon: ShoppingCart,
     color: 'text-emerald-600',
@@ -67,7 +67,7 @@ export function SalesMetrics({
     change: '+9.8%',
     trend: 'up'
   }, {
-    title: 'Avg Order Value',
+    title: 'Rata-rata Nilai Pesanan',
     value: `Rp ${averageOrderValue.toLocaleString('id-ID')}`,
     icon: Target,
     color: 'text-indigo-600',
@@ -108,7 +108,7 @@ export function SalesMetrics({
             {/* Additional Info */}
             {metric.title === 'Total Revenue' && <div className="mt-3 pt-3 border-t border-border" data-unique-id="5beeb852-cb05-4567-8313-ac181be86aa4" data-file-name="components/sales-report/sales-metrics.tsx">
                 <div className="flex justify-between text-sm" data-unique-id="cf48123d-668b-4960-8e64-41c199d45dc6" data-file-name="components/sales-report/sales-metrics.tsx">
-                  <span className="text-muted-foreground" data-unique-id="4e2f3bed-fa9f-46fd-9b96-474a02d65261" data-file-name="components/sales-report/sales-metrics.tsx"><span className="editable-text" data-unique-id="615981dd-cb6f-47e7-82fd-00ae8407e942" data-file-name="components/sales-report/sales-metrics.tsx">Profit Margin:</span></span>
+                  <span className="text-muted-foreground" data-unique-id="4e2f3bed-fa9f-46fd-9b96-474a02d65261" data-file-name="components/sales-report/sales-metrics.tsx"><span className="editable-text" data-unique-id="615981dd-cb6f-47e7-82fd-00ae8407e942" data-file-name="components/sales-report/sales-metrics.tsx">Margin Keuntungan:</span></span>
                   <span className="font-semibold text-green-600" data-unique-id="8f991db2-1a28-4346-a4a8-055c61e66b3a" data-file-name="components/sales-report/sales-metrics.tsx" data-dynamic-text="true">
                     {profitMargin.toFixed(1)}<span className="editable-text" data-unique-id="43ef2f14-9c8f-4478-8b16-25a35e07cbad" data-file-name="components/sales-report/sales-metrics.tsx">%
                   </span></span>

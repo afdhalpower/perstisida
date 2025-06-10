@@ -11,6 +11,8 @@ interface DraggableWidgetProps {
   widget: Widget;
   index: number;
   onEdit: (widget: Widget) => void;
+  stats: any;
+  chartData?: any[];
 }
 interface DragItem {
   type: string;
@@ -20,7 +22,9 @@ interface DragItem {
 export function DraggableWidget({
   widget,
   index,
-  onEdit
+  onEdit,
+  stats,
+  chartData
 }: DraggableWidgetProps) {
   const ref = useRef<HTMLDivElement>(null);
   const {
@@ -123,7 +127,7 @@ export function DraggableWidget({
           </button>}
 
         {/* Widget Content */}
-        <WidgetRenderer widget={widget} />
+        <WidgetRenderer widget={widget} stats={stats} chartData={chartData} />
       </div>
     </motion.div>;
 }

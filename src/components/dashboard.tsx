@@ -21,6 +21,7 @@ export function Dashboard() {
     totalProducts: 0,
     monthlyRevenue: 0
   });
+  const [chartData, setChartData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [showCustomizer, setShowCustomizer] = useState(false);
   const [editingWidget, setEditingWidget] = useState<Widget | null>(null);
@@ -69,10 +70,52 @@ export function Dashboard() {
         totalProducts,
         monthlyRevenue
       });
+
+      // Generate chart data from recent transactions
+      const chartData = await generateChartData();
+      setChartData(chartData);
     } catch (error) {
       console.error('Error fetching dashboard stats:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const generateChartData = async () => {
+    try {
+      const last7Days = [];
+      const today = new Date();
+      
+      for (let i = 6; i >= 0; i--) {
+        const date = new Date(today);
+        date.setDate(date.getDate() - i);
+        const dayStart = new Date(date.setHours(0, 0, 0, 0));
+        const dayEnd = new Date(date.setHours(23, 59, 59, 999));
+        
+        const dayQuery = query(
+          collection(db, 'transactions'),
+          where('timestamp', '>=', Timestamp.fromDate(dayStart)),
+          where('timestamp', '<=', Timestamp.fromDate(dayEnd))
+        );
+        
+        const daySnapshot = await getDocs(dayQuery);
+        let dayRevenue = 0;
+        
+        daySnapshot.forEach(doc => {
+          const data = doc.data();
+          dayRevenue += data.sellPrice * data.quantity || 0;
+        });
+        
+        last7Days.push({
+          name: format(dayStart, 'EEE', { locale: id }),
+          value: dayRevenue
+        });
+      }
+      
+      return last7Days;
+    } catch (error) {
+      console.error('Error generating chart data:', error);
+      return [];
     }
   };
   if (loading) {
@@ -141,7 +184,7 @@ export function Dashboard() {
 
         {/* Widgets Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8" data-unique-id="71e1aac8-b543-45c6-a264-dc4e427acb44" data-file-name="components/dashboard.tsx" data-dynamic-text="true">
-          {widgets.map((widget, index) => <DraggableWidget key={widget.id} widget={widget} index={index} onEdit={setEditingWidget} data-unique-id="eec6bf24-c837-4471-beea-abcc3c7045b3" data-file-name="components/dashboard.tsx" data-dynamic-text="true" />)}
+          {widgets.map((widget, index) => <DraggableWidget key={widget.id} widget={widget} index={index} onEdit={setEditingWidget} stats={stats} chartData={chartData} data-unique-id="eec6bf24-c837-4471-beea-abcc3c7045b3" data-file-name="components/dashboard.tsx" data-dynamic-text="true" />)}
         </div>
 
         {/* Empty State */}
