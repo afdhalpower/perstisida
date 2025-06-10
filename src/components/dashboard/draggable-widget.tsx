@@ -108,17 +108,17 @@ export function DraggableWidget({
     scale: 1
   }} transition={{
     duration: 0.2
-  }} data-unique-id="e0e4b2ad-b533-4d47-88bd-deb8085c03a6" data-file-name="components/dashboard/draggable-widget.tsx">
-      <div className="glass-effect rounded-2xl p-6 h-full hover-lift transition-all duration-300 relative" data-unique-id="6e50b0dd-3956-4cfc-977e-987944067894" data-file-name="components/dashboard/draggable-widget.tsx" data-dynamic-text="true">
+  }}>
+      <div className="glass-effect rounded-2xl p-6 h-full hover-lift transition-all duration-300 relative">
         {/* Drag Handle - Only visible in customization mode */}
-        {isCustomizing && <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity" data-unique-id="4096216a-e29a-4393-8229-0b10260ebe7c" data-file-name="components/dashboard/draggable-widget.tsx">
-            <div className="p-1 rounded cursor-move text-muted-foreground hover:text-foreground" data-unique-id="05dd9fc1-12d2-40c7-9af3-3b82c214eb35" data-file-name="components/dashboard/draggable-widget.tsx">
+        {isCustomizing && <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity">
+            <div className="p-1 rounded cursor-move text-muted-foreground hover:text-foreground">
               <GripVertical className="w-4 h-4" />
             </div>
           </div>}
 
         {/* Edit Button - Only visible in customization mode */}
-        {isCustomizing && <button onClick={() => onEdit(widget)} className="absolute top-2 right-2 p-2 rounded-lg bg-white/80 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white" data-unique-id="ef1015aa-4dd1-4a1d-998b-ba26419df89f" data-file-name="components/dashboard/draggable-widget.tsx">
+        {isCustomizing && <button onClick={() => onEdit(widget)} className="absolute top-2 right-2 p-2 rounded-lg bg-white/80 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white">
             <Settings className="w-4 h-4" />
           </button>}
 
