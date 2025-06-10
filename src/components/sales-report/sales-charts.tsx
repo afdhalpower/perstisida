@@ -77,7 +77,7 @@ export function SalesCharts({
     return acc;
   }, {} as Record<string, any>);
   const companyChartData = Object.values(companyData).sort((a: any, b: any) => b.revenue - a.revenue).slice(0, 8);
-  return <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+  return <div className="grid grid-cols-1 lg:grid-cols-2 gap-8" data-unique-id="80612536-d6b0-40c7-9d66-e183afe34f9f" data-file-name="components/sales-report/sales-charts.tsx" data-dynamic-text="true">
       {/* Daily Sales Trend */}
       <motion.div initial={{
       opacity: 0,
@@ -85,18 +85,18 @@ export function SalesCharts({
     }} animate={{
       opacity: 1,
       y: 0
-    }} className="glass-effect rounded-2xl p-6">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
+    }} className="glass-effect rounded-2xl p-6" data-unique-id="4838c552-65ab-43da-8832-ab36141a960e" data-file-name="components/sales-report/sales-charts.tsx">
+        <div className="flex items-center gap-3 mb-6" data-unique-id="4314491a-599c-4635-988b-5b3f6f958d64" data-file-name="components/sales-report/sales-charts.tsx">
+          <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center" data-unique-id="0b4ed7c6-e8f5-442f-95c4-b53e407fabe3" data-file-name="components/sales-report/sales-charts.tsx">
             <TrendingUp className="w-5 h-5 text-white" />
           </div>
-          <div>
-            <h3 className="text-xl font-bold"><span className="editable-text">Sales Trend</span></h3>
-            <p className="text-sm text-muted-foreground"><span className="editable-text">Daily revenue and profit</span></p>
+          <div data-unique-id="1cf04026-4fb1-4dde-8fb6-10fc23b9eef1" data-file-name="components/sales-report/sales-charts.tsx">
+            <h3 className="text-xl font-bold" data-unique-id="21c07f04-406f-42db-bd10-1fd09907dd44" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="d3e4c397-02c1-40bf-b707-ad3b11e7fa05" data-file-name="components/sales-report/sales-charts.tsx">Sales Trend</span></h3>
+            <p className="text-sm text-muted-foreground" data-unique-id="7004661c-9d2b-4bb5-955b-7d40a033b185" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="146febe8-3cb9-4d43-9a68-551948ea4557" data-file-name="components/sales-report/sales-charts.tsx">Daily revenue and profit</span></p>
           </div>
         </div>
         
-        <div className="h-80">
+        <div className="h-80" data-unique-id="3e854f30-c011-4058-85c9-cbf7d74aa729" data-file-name="components/sales-report/sales-charts.tsx">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={dailyData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e5e5" />
@@ -145,25 +145,25 @@ export function SalesCharts({
       y: 0
     }} transition={{
       delay: 0.1
-    }} className="glass-effect rounded-2xl p-6">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
+    }} className="glass-effect rounded-2xl p-6" data-unique-id="d218d498-214f-4c29-8ca6-11ec92d6dee2" data-file-name="components/sales-report/sales-charts.tsx">
+        <div className="flex items-center gap-3 mb-6" data-unique-id="d9e1d4c1-04af-40b6-b648-94f4a4aa5752" data-file-name="components/sales-report/sales-charts.tsx">
+          <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center" data-unique-id="78c25642-6740-4f82-99a1-fe527475e4a4" data-file-name="components/sales-report/sales-charts.tsx">
             <PieChartIcon className="w-5 h-5 text-white" />
           </div>
-          <div>
-            <h3 className="text-xl font-bold"><span className="editable-text">Revenue by Product</span></h3>
-            <p className="text-sm text-muted-foreground"><span className="editable-text">Top 6 products</span></p>
+          <div data-unique-id="925aa2c1-bee8-4bd8-b997-eb0945fd89ee" data-file-name="components/sales-report/sales-charts.tsx">
+            <h3 className="text-xl font-bold" data-unique-id="d81a6a94-13eb-431d-b729-c8a945d3d42d" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="d88022df-c87f-471c-b2d5-21f432a601f5" data-file-name="components/sales-report/sales-charts.tsx">Revenue by Product</span></h3>
+            <p className="text-sm text-muted-foreground" data-unique-id="bf043a5d-162c-42eb-ab3a-a02847e3a3c6" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="e5bbd2fc-7ad2-4802-b3f6-15aebdcdb495" data-file-name="components/sales-report/sales-charts.tsx">Top 6 products</span></p>
           </div>
         </div>
         
-        <div className="h-80">
+        <div className="h-80" data-unique-id="0efb6fe4-32f8-4fdf-b814-12532a297b55" data-file-name="components/sales-report/sales-charts.tsx">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie data={pieData} cx="50%" cy="50%" outerRadius={100} dataKey="value" label={({
               name,
               percent
             }) => `${name} ${(percent * 100).toFixed(0)}%`} labelLine={false}>
-                {pieData.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)}
+                {pieData.map((entry, index) => <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} data-unique-id="2ddba488-b33c-41c9-a5a6-11076a4629c9" data-file-name="components/sales-report/sales-charts.tsx" data-dynamic-text="true" />)}
               </Pie>
               <Tooltip formatter={(value: number) => [`Rp ${value.toLocaleString('id-ID')}`, 'Revenue']} contentStyle={{
               backgroundColor: 'rgba(255, 255, 255, 0.95)',
@@ -184,18 +184,18 @@ export function SalesCharts({
       y: 0
     }} transition={{
       delay: 0.2
-    }} className="glass-effect rounded-2xl p-6 lg:col-span-2">
-        <div className="flex items-center gap-3 mb-6">
-          <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center">
+    }} className="glass-effect rounded-2xl p-6 lg:col-span-2" data-unique-id="0130a1d7-b70e-40b1-83b1-c208b8672f81" data-file-name="components/sales-report/sales-charts.tsx">
+        <div className="flex items-center gap-3 mb-6" data-unique-id="0c391f30-91d6-4322-b353-d440b3a50958" data-file-name="components/sales-report/sales-charts.tsx">
+          <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center" data-unique-id="63b8344e-9e2f-499b-97f8-c0472015066e" data-file-name="components/sales-report/sales-charts.tsx">
             <BarChart3 className="w-5 h-5 text-white" />
           </div>
-          <div>
-            <h3 className="text-xl font-bold"><span className="editable-text">Company Performance</span></h3>
-            <p className="text-sm text-muted-foreground"><span className="editable-text">Revenue and profit by company</span></p>
+          <div data-unique-id="5843e67d-f388-4b43-a2df-94d4ef480659" data-file-name="components/sales-report/sales-charts.tsx">
+            <h3 className="text-xl font-bold" data-unique-id="3bcf21ce-3b92-46d4-80f9-45fae43adc5f" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="9aa26f8f-a37e-46cd-9133-f2e8b5ae8269" data-file-name="components/sales-report/sales-charts.tsx">Company Performance</span></h3>
+            <p className="text-sm text-muted-foreground" data-unique-id="793ebaad-c77a-4832-8786-764fda2d72d2" data-file-name="components/sales-report/sales-charts.tsx"><span className="editable-text" data-unique-id="d42ed456-55e1-40f5-83c3-8a843f66ad4e" data-file-name="components/sales-report/sales-charts.tsx">Revenue and profit by company</span></p>
           </div>
         </div>
         
-        <div className="h-80">
+        <div className="h-80" data-unique-id="d0dd4cb6-af78-44da-9550-80ea3943ba9d" data-file-name="components/sales-report/sales-charts.tsx">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={companyChartData} margin={{
             top: 20,

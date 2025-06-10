@@ -17,7 +17,7 @@ export function LoginPage() {
       setLoading(false);
     }
   };
-  return <div className="min-h-screen flex items-center justify-center p-8">
+  return <div className="min-h-screen flex items-center justify-center p-8" data-unique-id="a522e92f-0287-4dbd-99c1-e479621600e1" data-file-name="components/login-page.tsx">
       <motion.div initial={{
       opacity: 0,
       y: 20
@@ -26,8 +26,8 @@ export function LoginPage() {
       y: 0
     }} transition={{
       duration: 0.6
-    }} className="max-w-md w-full">
-        <div className="text-center mb-12">
+    }} className="max-w-md w-full" data-unique-id="0435b1f6-5e8f-4e05-b333-dbeda5cef82f" data-file-name="components/login-page.tsx">
+        <div className="text-center mb-12" data-unique-id="4d1b436e-3702-4b79-8385-c66ccffc00a2" data-file-name="components/login-page.tsx">
           <motion.div initial={{
           scale: 0
         }} animate={{
@@ -36,8 +36,8 @@ export function LoginPage() {
           delay: 0.2,
           type: 'spring',
           stiffness: 200
-        }} className="w-20 h-20 mx-auto mb-6 rounded-full gradient-primary flex items-center justify-center">
-            <div className="flex items-center gap-1">
+        }} className="w-20 h-20 mx-auto mb-6 rounded-full gradient-primary flex items-center justify-center" data-unique-id="e687530a-843f-4cde-bd23-c2b6b1c20f0d" data-file-name="components/login-page.tsx">
+            <div className="flex items-center gap-1" data-unique-id="62a0df0b-c5b6-4bc6-9600-5b6460909fdf" data-file-name="components/login-page.tsx">
               <Leaf className="w-6 h-6 text-white" />
               <ShoppingCart className="w-6 h-6 text-white" />
             </div>
@@ -49,7 +49,7 @@ export function LoginPage() {
           opacity: 1
         }} transition={{
           delay: 0.3
-        }} className="text-4xl font-bold bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent mb-3"><span className="editable-text">
+        }} className="text-4xl font-bold bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent mb-3" data-unique-id="c910ef1b-a9d0-4f40-b825-f9a74251c392" data-file-name="components/login-page.tsx"><span className="editable-text" data-unique-id="f9931570-c91b-4497-96c1-84cb9be92556" data-file-name="components/login-page.tsx">
             PestisidaApp
           </span></motion.h1>
           
@@ -59,7 +59,7 @@ export function LoginPage() {
           opacity: 1
         }} transition={{
           delay: 0.4
-        }} className="text-muted-foreground text-lg"><span className="editable-text">
+        }} className="text-muted-foreground text-lg" data-unique-id="92390e49-c40e-4030-a371-4303913f2395" data-file-name="components/login-page.tsx"><span className="editable-text" data-unique-id="2ad37c38-b7e0-401d-8663-ec2461dea896" data-file-name="components/login-page.tsx">
             Sistem Pencatatan Penjualan Pestisida
           </span></motion.p>
         </div>
@@ -72,15 +72,15 @@ export function LoginPage() {
         y: 0
       }} transition={{
         delay: 0.5
-      }} className="glass-effect rounded-2xl p-8 hover-lift">
-          <h2 className="text-2xl font-semibold mb-6 text-center"><span className="editable-text">Masuk ke Akun Anda</span></h2>
+      }} className="glass-effect rounded-2xl p-8 hover-lift" data-unique-id="3b983e04-ea77-468b-ac92-f1d648e9e96a" data-file-name="components/login-page.tsx">
+          <h2 className="text-2xl font-semibold mb-6 text-center" data-unique-id="b7a873d2-c091-43ba-9169-292bdc7b5030" data-file-name="components/login-page.tsx"><span className="editable-text" data-unique-id="31136f7e-4280-4097-92fb-1894404c4ee0" data-file-name="components/login-page.tsx">Masuk ke Akun Anda</span></h2>
           
           <motion.button whileHover={{
           scale: 1.02
         }} whileTap={{
           scale: 0.98
-        }} onClick={handleGoogleLogin} disabled={loading} className="w-full gradient-primary text-white rounded-xl py-4 px-6 font-semibold flex items-center justify-center gap-3 hover:shadow-lg transition-all duration-300 disabled:opacity-50">
-            <svg className="w-5 h-5" viewBox="0 0 24 24">
+        }} onClick={handleGoogleLogin} disabled={loading} className="w-full gradient-primary text-white rounded-xl py-4 px-6 font-semibold flex items-center justify-center gap-3 hover:shadow-lg transition-all duration-300 disabled:opacity-50" data-unique-id="76fd0306-67e6-4385-9e95-ee537b6a678b" data-file-name="components/login-page.tsx" data-dynamic-text="true">
+            <svg className="w-5 h-5" viewBox="0 0 24 24" data-unique-id="55584063-e6d8-49c2-99d6-fe056e9af33a" data-file-name="components/login-page.tsx">
               <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
               <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
               <path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
@@ -90,7 +90,7 @@ export function LoginPage() {
             {!loading && <ArrowRight className="w-4 h-4" />}
           </motion.button>
           
-          <p className="text-sm text-muted-foreground text-center mt-6"><span className="editable-text">
+          <p className="text-sm text-muted-foreground text-center mt-6" data-unique-id="79d671de-d303-4529-b737-56f7b455210e" data-file-name="components/login-page.tsx"><span className="editable-text" data-unique-id="4a950997-2e7e-4c14-807d-99ce020e7ae5" data-file-name="components/login-page.tsx">
             Masuk dengan akun Google Anda untuk mengakses sistem pencatatan penjualan pestisida
           </span></p>
         </motion.div>

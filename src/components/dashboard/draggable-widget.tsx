@@ -7,28 +7,35 @@ import { GripVertical, Settings } from 'lucide-react';
 import { Widget } from '@/types/widget';
 import { useWidgetStore } from '@/stores/widget-store';
 import { WidgetRenderer } from './widget-renderer';
-
 interface DraggableWidgetProps {
   widget: Widget;
   index: number;
   onEdit: (widget: Widget) => void;
 }
-
 interface DragItem {
   type: string;
   id: string;
   index: number;
 }
-
-export function DraggableWidget({ widget, index, onEdit }: DraggableWidgetProps) {
+export function DraggableWidget({
+  widget,
+  index,
+  onEdit
+}: DraggableWidgetProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const { moveWidget, isCustomizing } = useWidgetStore();
-
-  const [{ handlerId }, drop] = useDrop({
+  const {
+    moveWidget,
+    isCustomizing
+  } = useWidgetStore();
+  const [{
+    handlerId
+  }, drop] = useDrop<DragItem, void, {
+    handlerId: string | symbol | null;
+  }>({
     accept: 'widget',
     collect(monitor) {
       return {
-        handlerId: monitor.getHandlerId(),
+        handlerId: monitor.getHandlerId()
       };
     },
     hover(item: DragItem, monitor) {
@@ -37,45 +44,48 @@ export function DraggableWidget({ widget, index, onEdit }: DraggableWidgetProps)
       }
       const dragIndex = item.index;
       const hoverIndex = index;
-
       if (dragIndex === hoverIndex) {
         return;
       }
-
       const hoverBoundingRect = ref.current?.getBoundingClientRect();
       const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
       const clientOffset = monitor.getClientOffset();
       const hoverClientY = clientOffset!.y - hoverBoundingRect.top;
-
       if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
         return;
       }
-
       if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
         return;
       }
 
       // Update positions
-      moveWidget(item.id, { x: hoverIndex % 4, y: Math.floor(hoverIndex / 4) });
+      moveWidget(item.id, {
+        x: hoverIndex % 4,
+        y: Math.floor(hoverIndex / 4)
+      });
       item.index = hoverIndex;
-    },
+    }
   });
-
-  const [{ isDragging }, drag, preview] = useDrag({
+  const [{
+    isDragging
+  }, drag, preview] = useDrag<DragItem, void, {
+    isDragging: boolean;
+  }>({
     type: 'widget',
     item: () => {
-      return { id: widget.id, index };
+      return {
+        type: 'widget',
+        id: widget.id,
+        index
+      };
     },
-    collect: (monitor) => ({
-      isDragging: monitor.isDragging(),
+    collect: monitor => ({
+      isDragging: monitor.isDragging()
     }),
-    canDrag: isCustomizing,
+    canDrag: isCustomizing
   });
-
   const opacity = isDragging ? 0.4 : 1;
-  
   drag(drop(ref));
-
   const getWidgetSize = (size: Widget['size']) => {
     switch (size) {
       case 'small':
@@ -88,40 +98,32 @@ export function DraggableWidget({ widget, index, onEdit }: DraggableWidgetProps)
         return 'col-span-1';
     }
   };
-
-  return (
-    <motion.div
-      ref={ref}
-      style={{ opacity }}
-      data-handler-id={handlerId}
-      className={`${getWidgetSize(widget.size)} relative group`}
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.2 }}
-    >
-      <div className="glass-effect rounded-2xl p-6 h-full hover-lift transition-all duration-300 relative">
+  return <motion.div ref={ref} style={{
+    opacity
+  }} data-handler-id={handlerId} className={`${getWidgetSize(widget.size)} relative group`} initial={{
+    opacity: 0,
+    scale: 0.9
+  }} animate={{
+    opacity: 1,
+    scale: 1
+  }} transition={{
+    duration: 0.2
+  }} data-unique-id="e0e4b2ad-b533-4d47-88bd-deb8085c03a6" data-file-name="components/dashboard/draggable-widget.tsx">
+      <div className="glass-effect rounded-2xl p-6 h-full hover-lift transition-all duration-300 relative" data-unique-id="6e50b0dd-3956-4cfc-977e-987944067894" data-file-name="components/dashboard/draggable-widget.tsx" data-dynamic-text="true">
         {/* Drag Handle - Only visible in customization mode */}
-        {isCustomizing && (
-          <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity">
-            <div className="p-1 rounded cursor-move text-muted-foreground hover:text-foreground">
+        {isCustomizing && <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-100 transition-opacity" data-unique-id="4096216a-e29a-4393-8229-0b10260ebe7c" data-file-name="components/dashboard/draggable-widget.tsx">
+            <div className="p-1 rounded cursor-move text-muted-foreground hover:text-foreground" data-unique-id="05dd9fc1-12d2-40c7-9af3-3b82c214eb35" data-file-name="components/dashboard/draggable-widget.tsx">
               <GripVertical className="w-4 h-4" />
             </div>
-          </div>
-        )}
+          </div>}
 
         {/* Edit Button - Only visible in customization mode */}
-        {isCustomizing && (
-          <button
-            onClick={() => onEdit(widget)}
-            className="absolute top-2 right-2 p-2 rounded-lg bg-white/80 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
-          >
+        {isCustomizing && <button onClick={() => onEdit(widget)} className="absolute top-2 right-2 p-2 rounded-lg bg-white/80 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white" data-unique-id="ef1015aa-4dd1-4a1d-998b-ba26419df89f" data-file-name="components/dashboard/draggable-widget.tsx">
             <Settings className="w-4 h-4" />
-          </button>
-        )}
+          </button>}
 
         {/* Widget Content */}
         <WidgetRenderer widget={widget} />
       </div>
-    </motion.div>
-  );
+    </motion.div>;
 }

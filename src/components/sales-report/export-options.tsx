@@ -128,12 +128,12 @@ export function ExportOptions({
     action: generatePDF,
     description: 'Summary report in PDF format'
   }];
-  return <div className="relative">
+  return <div className="relative" data-unique-id="977c4adf-c257-4ebb-92f0-d09217dac284" data-file-name="components/sales-report/export-options.tsx">
       <motion.button whileHover={{
       scale: 1.02
     }} whileTap={{
       scale: 0.98
-    }} onClick={() => setIsOpen(!isOpen)} disabled={isExporting} className="flex items-center gap-2 px-4 py-2 rounded-xl gradient-primary text-white font-semibold hover:shadow-lg transition-all duration-300 disabled:opacity-50">
+    }} onClick={() => setIsOpen(!isOpen)} disabled={isExporting} className="flex items-center gap-2 px-4 py-2 rounded-xl gradient-primary text-white font-semibold hover:shadow-lg transition-all duration-300 disabled:opacity-50" data-unique-id="08e4c0cd-b02b-4d43-a025-8d384eb9c5fe" data-file-name="components/sales-report/export-options.tsx" data-dynamic-text="true">
         <Download className="w-4 h-4" />
         {isExporting ? 'Exporting...' : 'Export'}
         <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
@@ -147,7 +147,7 @@ export function ExportOptions({
           opacity: 1
         }} exit={{
           opacity: 0
-        }} className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} />
+        }} className="fixed inset-0 z-40" onClick={() => setIsOpen(false)} data-unique-id="57027842-25fe-4f35-96e5-9690bbb9f1e1" data-file-name="components/sales-report/export-options.tsx" />
             <motion.div initial={{
           opacity: 0,
           y: 10,
@@ -160,26 +160,26 @@ export function ExportOptions({
           opacity: 0,
           y: 10,
           scale: 0.95
-        }} className="absolute top-full mt-2 right-0 w-64 glass-effect rounded-2xl border border-border shadow-xl z-50 p-4">
-              <h3 className="font-semibold mb-3"><span className="editable-text">Export Options</span></h3>
-              <div className="space-y-2">
+        }} className="absolute top-full mt-2 right-0 w-64 glass-effect rounded-2xl border border-border shadow-xl z-50 p-4" data-unique-id="8afa8539-a957-400a-8ab7-8c5fdd19eb45" data-file-name="components/sales-report/export-options.tsx">
+              <h3 className="font-semibold mb-3" data-unique-id="3fedc065-2ae1-40e8-b7ad-714ab4ce81b4" data-file-name="components/sales-report/export-options.tsx"><span className="editable-text" data-unique-id="d4e4d00d-4648-4603-801e-641f3290fbcd" data-file-name="components/sales-report/export-options.tsx">Export Options</span></h3>
+              <div className="space-y-2" data-unique-id="085f6e27-6dd8-4bf9-bd96-7438b6af154b" data-file-name="components/sales-report/export-options.tsx" data-dynamic-text="true">
                 {exportOptions.map(option => {
               const Icon = option.icon;
-              return <button key={option.label} onClick={option.action} disabled={isExporting} className="w-full text-left p-3 rounded-lg hover:bg-accent/50 transition-colors disabled:opacity-50 group">
-                      <div className="flex items-start gap-3">
+              return <button key={option.label} onClick={option.action} disabled={isExporting} className="w-full text-left p-3 rounded-lg hover:bg-accent/50 transition-colors disabled:opacity-50 group" data-unique-id="edad0e33-30ce-4a38-8ddd-a09c99372e42" data-file-name="components/sales-report/export-options.tsx">
+                      <div className="flex items-start gap-3" data-unique-id="fa3866bc-363f-4dfc-8d1b-0861ec0f3c1d" data-file-name="components/sales-report/export-options.tsx">
                         <Icon className="w-5 h-5 text-primary group-hover:scale-110 transition-transform" />
-                        <div>
-                          <p className="font-medium">{option.label}</p>
-                          <p className="text-xs text-muted-foreground">{option.description}</p>
+                        <div data-unique-id="a2f14924-4c0b-4b3b-aa2c-5a5ea306d219" data-file-name="components/sales-report/export-options.tsx">
+                          <p className="font-medium" data-unique-id="d9e9e5f0-57e6-4c28-b739-e9a2a31424db" data-file-name="components/sales-report/export-options.tsx" data-dynamic-text="true">{option.label}</p>
+                          <p className="text-xs text-muted-foreground" data-unique-id="d94b16ee-c90e-4f5c-b5c4-7d52c35e9c41" data-file-name="components/sales-report/export-options.tsx" data-dynamic-text="true">{option.description}</p>
                         </div>
                       </div>
                     </button>;
             })}
               </div>
               
-              <div className="mt-4 pt-3 border-t border-border">
-                <p className="text-xs text-muted-foreground"><span className="editable-text">
-                  Exporting </span>{data.length}<span className="editable-text"> transactions from </span>{format(dateRange.startDate, 'MMM dd')}<span className="editable-text"> to </span>{format(dateRange.endDate, 'MMM dd, yyyy')}
+              <div className="mt-4 pt-3 border-t border-border" data-unique-id="6c2e3175-1778-4506-ba24-b28af23158ab" data-file-name="components/sales-report/export-options.tsx">
+                <p className="text-xs text-muted-foreground" data-unique-id="34b19a37-8c3d-469d-b0af-ef38cd788edc" data-file-name="components/sales-report/export-options.tsx" data-dynamic-text="true"><span className="editable-text" data-unique-id="00897727-62b7-4452-a4f5-68b3f1a89c1d" data-file-name="components/sales-report/export-options.tsx">
+                  Exporting </span>{data.length}<span className="editable-text" data-unique-id="c42faf92-6942-4ac0-aa55-801886f79083" data-file-name="components/sales-report/export-options.tsx"> transactions from </span>{format(dateRange.startDate, 'MMM dd')}<span className="editable-text" data-unique-id="8e774a88-47d8-46fa-b3f1-b03e149f3af9" data-file-name="components/sales-report/export-options.tsx"> to </span>{format(dateRange.endDate, 'MMM dd, yyyy')}
                 </p>
               </div>
             </motion.div>
