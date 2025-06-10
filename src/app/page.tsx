@@ -18,17 +18,20 @@ export default function HomePage() {
         return <Products />;
       case 'transactions':
         return <Transactions />;
+      case 'reports':
       case 'history':
         return <History />;
+      case 'accounting':
+        return <Accounting />;
       default:
         return <Dashboard />;
     }
   };
   return <AuthGuard>
-      <div className="min-h-screen">
+      <div className="min-h-screen" data-unique-id="612c8797-3eee-48ef-8687-4cbc191da264" data-file-name="app/page.tsx">
         <Navigation currentPage={currentPage} onPageChange={setCurrentPage} />
         
-        <main className="lg:ml-72 pt-16 lg:pt-0">
+        <main className="lg:ml-72 pt-16 lg:pt-0" data-unique-id="a4ad3706-9143-4081-8ba4-0448dfa47ef7" data-file-name="app/page.tsx" data-dynamic-text="true">
           {renderPage()}
         </main>
       </div>
