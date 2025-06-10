@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { auth } from '@/lib/firebase';
 import { signOut } from 'firebase/auth';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Home, Package, ShoppingCart, History, Calculator, LogOut, Menu, X, Leaf, User } from 'lucide-react';
+import { Home, Package, ShoppingCart, History, Calculator, LogOut, Menu, X, Leaf, User, BarChart3 } from 'lucide-react';
 interface NavigationProps {
   currentPage: string;
   onPageChange: (page: string) => void;
@@ -37,10 +37,15 @@ export function Navigation({
     icon: Package,
     description: 'Kelola inventori dan produk'
   }, {
+    id: 'sales-report',
+    label: 'Laporan Penjualan',
+    icon: BarChart3,
+    description: 'Dashboard analisis penjualan'
+  }, {
     id: 'reports',
-    label: 'Laporan',
+    label: 'Riwayat Transaksi',
     icon: History,
-    description: 'Lihat laporan dan riwayat'
+    description: 'Lihat riwayat transaksi'
   }, {
     id: 'accounting',
     label: 'Akuntansi',

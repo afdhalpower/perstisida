@@ -8,6 +8,7 @@ import { Products } from '@/components/products';
 import { Transactions } from '@/components/transactions';
 import { History } from '@/components/history';
 import { Accounting } from '@/components/accounting';
+import { SalesReport } from '@/components/sales-report';
 export default function HomePage() {
   const [currentPage, setCurrentPage] = useState('dashboard');
   const renderPage = () => {
@@ -18,6 +19,8 @@ export default function HomePage() {
         return <Products />;
       case 'transactions':
         return <Transactions />;
+      case 'sales-report':
+        return <SalesReport />;
       case 'reports':
       case 'history':
         return <History />;
