@@ -17,6 +17,16 @@ export interface Transaction {
   timestamp: Date;
 }
 
+export interface CartItem {
+  id: string;
+  productName: string;
+  company: string;
+  costPrice: number;
+  sellPrice: number;
+  quantity: number;
+  profit: number;
+}
+
 export interface DashboardStats {
   todayTransactions: number;
   todayProfit: number;
