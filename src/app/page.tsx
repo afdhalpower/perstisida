@@ -31,10 +31,10 @@ export default function HomePage() {
     }
   };
   return <AuthGuard>
-      <div className="min-h-screen">
+      <div className="min-h-screen" data-unique-id="a69abb16-120a-4717-a0bd-673d32643f7a" data-file-name="app/page.tsx">
         <Navigation currentPage={currentPage} onPageChange={setCurrentPage} />
         
-        <main className="lg:ml-72 pt-16 lg:pt-0">
+        <main className="lg:ml-72 pt-16 lg:pt-0" data-unique-id="0b77d1ae-9e3c-4cc7-9534-805bfef2ab47" data-file-name="app/page.tsx" data-dynamic-text="true">
           {renderPage()}
         </main>
       </div>
